@@ -1,0 +1,8 @@
+<div class="row">
+  <div class="ui grid center aligned">
+    <div class="three wide column center aligned" *ngFor="let element of elements">
+      <img [src]="element.imageUrl" alt="photo">
+      <p>{{ element.title }}</p>
+    </div>
+  </div>
+</div>
