@@ -19,6 +19,9 @@ deploy-production:
   stage: deploy
   dependencies:
     - app-build
+  artifacts:
+    paths:
+      - dist/
   script:
     - npm install -g firebase-tools
     - npm run deploy
