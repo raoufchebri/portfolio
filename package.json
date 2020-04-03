@@ -9,7 +9,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "deploy": "firebase deploy --token '$FIREBASE_TOKEN'"
+    "deploy": "firebase deploy --token '1//091i0LRn0TK_3CgYIARAAGAkSNwF-L9IrMSYecyUfU6SBBeZaA7uqahEGhdv8WvfxY5UyKiAhEA3wEAr2zp--CI_-Hg9560vi41k'"
   },
   "private": true,
   "dependencies": {
