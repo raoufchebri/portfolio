@@ -5,9 +5,11 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
+    "build:portfolio": "ng build --prod --app=portfolio",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "deploy": "firebase deploy --non-interactive --token $FIREBASE_TOKEN"
   },
   "private": true,
   "dependencies": {
