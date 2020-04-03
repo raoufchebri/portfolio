@@ -1,7 +1,6 @@
 image: juristr/angular-ci-build:1.0.0
 stages:
   - build
-  - test
   - deploy
   
 before_script:
@@ -15,11 +14,6 @@ app-build:
       - dist/
   script:
     - npm run build:portfolio
-
-unit-tests:
-  stage: test
-  script:
-    - npm run test:ci
 
 deploy-production:
   stage: deploy
