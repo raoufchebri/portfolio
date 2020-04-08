@@ -17,10 +17,9 @@ h3.ui.header {
 }
 
 .masthead.segment {
-    height: 100%;
-    min-height: 1000px;
+    min-height: 1080px;
     padding: 1em 0em;
-    background-image: url('../assets/images/background.jpg');
+    background-image: url('../assets/images/wallpaper.jpg');
     background-size: cover;
 }
 .masthead.center.aligned.segment {
@@ -33,7 +32,7 @@ margin-right: 1em;
 margin-left: 0.5em;
 }
 .masthead h1.ui.header {
-margin-top: 3em;
+margin-top: 10em;
 margin-bottom: 0em;
 font-size: 4em;
 font-weight: normal;
@@ -44,10 +43,11 @@ font-weight: normal;
 }
 
 .ui.vertical.stripe {
-padding: 8em 0em;
+padding: 4em 0em;
 }
 .ui.vertical.stripe h3 {
 font-size: 2em;
+padding: 1.5em;
 }
 .ui.vertical.stripe .button + h3,
 .ui.vertical.stripe p + h3 {

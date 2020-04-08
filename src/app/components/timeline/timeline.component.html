@@ -1,0 +1,59 @@
+<!-- <div class="row">
+  <div class="ui grid center aligned">
+  <div class="ui divided items">
+    <div class="item">
+      <div class="content">
+        <h2 class="ui header">
+          <img src="../assets/logos/microsoft.jpg" alt="" class="ui image">
+          <div class="content">
+            Software Developer Engineer
+            <div class="sub header">
+              <div class="column">Microsoft</div>
+              <div class="column">November 2015 to December 2016</div>
+            </div>
+          </div>
+        </h2>
+        <div class="description">
+          <p>Reported smoke tests result to the developer teams and management</p>
+          <p>Participated in daily scrum meetings to define, gather and prioritize requirements</p>
+          <p>Designed and owned four automated data pipelines to display Bing Ads performance on dashboard and reports</p>
+        </div>
+        <div class="extra">
+          <img class="ui avatar image" src="../assets/logos/csharp.svg">
+          <img class="ui avatar image" src="../assets/logos/sql.png">
+          <img class="ui avatar image" src="../assets/logos/javascript.png">
+          <img class="ui avatar image" src="../assets/logos/html.png">
+          <img class="ui avatar image" src="../assets/logos/css.svg">
+          <img class="ui avatar image" src="../assets/logos/azure2.png">
+          <img class="ui avatar image" src="../assets/logos/vsts.jpg">
+        </div>
+      </div>
+    </div>
+  </div> -->
+
+<section id=timeline>
+  <div class="demo-card-wrapper">
+    <div *ngFor="let element of elements; let i = index" [class]="'demo-card demo-card--step'+(i+1)">
+      <div class="ui header row">
+        <img [src]="element.logoUrl" alt="" class="ui image">
+        <div class="content">
+          {{ element.title }}
+          <div class="sub header">
+            {{ element.subtitle }}
+          </div>
+        </div>
+      </div>
+      <div class="body">
+        <div class="description">
+          <p>{{ element.description }}</p>
+          <ul>
+            <li *ngFor="let detail of element.details">{{ detail }}</li>
+          </ul>
+        </div>
+      </div>
+      <div class="extra">
+        <img *ngFor="let logoUrl of element.miniLogoUrls" class="ui avatar image" [src]="logoUrl">
+      </div>
+    </div>
+  </div>
+</section>

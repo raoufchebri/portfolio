@@ -1,20 +1,3 @@
-<!-- Following Menu -->
-<div class="ui large top fixed hidden menu">
-  <div class="ui container">
-    <a class="active item">Home</a>
-    <a class="item">Work</a>
-    <a class="item">Company</a>
-    <a class="item">Careers</a>
-    <div class="right menu">
-      <div class="item">
-        <a class="ui button">Log in</a>
-      </div>
-      <div class="item">
-        <a class="ui primary button">Sign Up</a>
-      </div>
-    </div>
-  </div>
-</div>
 
 <!-- Sidebar Menu -->
 <div class="ui vertical inverted sidebar menu">
@@ -27,44 +10,32 @@
 </div>
 
 
+<app-menu></app-menu>
+
 <!-- Page Contents -->
 <div class="pusher">
   <div class="ui inverted vertical masthead center aligned segment">
-
-    <!-- <div class="ui container">
-      <div class="ui large secondary inverted pointing menu">
-        <a class="toc item">
-          <i class="sidebar icon"></i>
-        </a>
-        <a class="active item">Home</a>
-        <a class="item">Work</a>
-        <a class="item">Company</a>
-        <a class="item">Careers</a>
-        <div class="right item">
-          <a class="ui inverted button">Log in</a>
-          <a class="ui inverted button">Sign Up</a>
-        </div>
-      </div>
-    </div> -->
-
-    <div class="ui text container">
-      <h1 class="ui inverted header">
-        Raouf Chebri
-      </h1>
-      <h2>Software Developer Engineer | MBA.</h2>
-      <div class="ui huge primary button">Scroll Down <i class="down arrow icon"></i></div>
+      <div class="ui text container">
+        <h1 class="ui inverted header">
+          Raouf Chebri
+        </h1>
+        <h2>Software Developer Engineer | MBA.</h2>
+        <!-- <a href = "#about" class="ui huge primary button">Scroll Down <i class="down arrow icon"></i></a> -->
     </div>
   </div>
-
+  
   <!-- BEGIN ::  ABOUT -->
-  <div class="ui vertical stripe segment">
+  <div id="about" class="ui vertical stripe segment">
+    <div class="ui header middle center aligned row">
+      <h3 class="ui header">About</h3>
+    </div>
     <div class="ui middle aligned stackable grid container">
       <div class="center aligned row">
         <div class="six wide column">
-          <img src="../assets/images/namaste.jpg" class="ui large bordered rounded image">
+          <img src="../assets/images/hvaler.jpg" class="ui large bordered rounded image">
 
           <h3 class="ui header">Who's this guy?</h3>
-            <p>Raouf Chebri is a Software Developer Engineer with experience in backend and frontend development with a growing interest
+            <p>Raouf Chebri is a Software Developer Engineer and an MBA with experience in backend and frontend development and a growing interest
               for Machine Learning, Deep Learning and Computer Vision.</p>
         </div>
         <div class="eight wide right floated column">
@@ -79,25 +50,40 @@
         </div>
       </div>
     </div>
-    <!-- BEGIN :: TECHNICAL SUMMARY -->
-    
-    <div class="ui vertical stripe segment">
-      <div class="ui header middle center aligned row">
-        <h3 class="ui header">Frameworks</h3>
-      </div>
-      <list [elements] = "frameworks"></list>
-    </div>
-  
-    <!-- END :: TECHNICAL SUMMARY -->
   </div>
   <!-- END :: ABOUT -->
-
+  <!-- BEGIN :: TECHNICAL SUMMARY -->
   
+  <div id="frameworks" class="ui vertical stripe segment">
+    <div class="ui header middle center aligned row">
+      <h3 class="ui header">Frameworks</h3>
+    </div>
+    <list [elements] = "frameworks"></list>
+  </div>
+
+  <div class="ui vertical stripe segment">
+    <div class="ui header middle center aligned row">
+      <h3 class="ui header">Code Base & Cloud Services</h3>
+    </div>
+    <list [elements] = "cloud"></list>
+  </div>
+
+  <!-- END :: TECHNICAL SUMMARY -->
+
+  <!-- BEGIN :: EXPERIENCE -->
+  <div id="journey" class="ui vertical stripe segment">
+    <div class="ui header middle center aligned row">
+      <h3 class="ui header">Journey</h3>
+    </div>
+        <timeline></timeline>
+    </div>
+  </div>
+  <!-- END :: EXPERIENCE -->
 
   <!-- BEGIN :: EDUCATION -->
   <div class="ui vertical stripe segment">
     <div class="ui header middle center aligned row">
-      <h3 class="ui header">Education</h3>
+      <h3 class="ui header">Education & Certifications</h3>
     </div>
     <list [elements] = "education"></list>
   </div>
