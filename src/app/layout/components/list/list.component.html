@@ -5,5 +5,11 @@
       <h3>{{element.title}}</h3>
       <p>{{ element.description }}</p>
     </div>
+    
+    <div class="eight wide column middle aligned" *ngFor="let element of elements">
+      <img [src]="element.imageUrl" alt="photo">
+      <h3>{{element.title}}</h3>
+      <p>{{ element.description }}</p>
+    </div>
   </div>
 </div>

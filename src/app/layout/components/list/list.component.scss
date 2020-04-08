@@ -1,0 +1,21 @@
+
+.column img{
+    width: 50%;
+  }
+
+p {
+  font-size: medium;
+}
+
+
+@media only screen and (max-width: 700px) {
+  .two.wide.column {
+      display: none !important;
+  }
+}
+
+@media only screen and (min-width: 700px) {
+  .eight.wide.column {
+      display: none !important;
+  }
+}

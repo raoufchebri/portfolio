@@ -32,7 +32,7 @@
   
   /* Card sizing */
   
-  $card-height: 380px;
+  $card-height: 420px;
   $card-width: 500px;
   $inner-margin: 15px;
   $number-size: 35px;
@@ -134,13 +134,14 @@
 	  @include mq-sm {
 		max-width: 60%;
 		box-shadow: $box-shadow;
-	  }
+	}
 	  @include mq-md {
 		max-width: 40%;
 	  }
 	  @include mq-lg {
 		max-width: $card-width;
-		height: $card-height;
+		min-height: $card-height;
+		min-height: $card-height;
 		margin: $outer-margin;
 		margin-top: $outer-margin/2;
 		margin-bottom: $outer-margin/2;
@@ -189,10 +190,10 @@
 		  margin: 0;
 		  padding-bottom: 6px;
 		  line-height: 1rem;
-		  @include mq-sm {
-			font-size: 165%;
-			line-height: 1.2rem;
-		  }
+		//   @include mq-sm {
+		// 	font-size: 165%;
+		// 	line-height: 1.2rem;
+		//   }
 		  span {
 			display: block;
 			font-size: 0.6rem;
@@ -217,5 +218,11 @@
 		  }
 		}
 	  }
+	}
+  }
+
+  @media only screen and (max-width: 750px) {
+	.demo-card {
+		height: 420px;
 	}
   }

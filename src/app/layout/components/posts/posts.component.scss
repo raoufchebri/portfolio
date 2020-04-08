@@ -1,0 +1,18 @@
+.ui.grid {
+    padding: 5%;
+}
+
+.ui.large.button {
+    margin-top: 2em;;
+}
+
+@media only screen and (max-width: 750px) {
+    .four.wide.column {
+        display: none !important;
+    }
+  }
+@media only screen and (min-width: 750px) {
+    .sixteen.wide.column {
+        display: none !important;
+    }
+  }

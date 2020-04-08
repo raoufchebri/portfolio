@@ -8,8 +8,7 @@
     "build:portfolio": "ng build --prod",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e",
-    "deploy": "firebase deploy --token '1//091i0LRn0TK_3CgYIARAAGAkSNwF-L9IrMSYecyUfU6SBBeZaA7uqahEGhdv8WvfxY5UyKiAhEA3wEAr2zp--CI_-Hg9560vi41k'"
+    "e2e": "ng e2e"
   },
   "private": true,
   "dependencies": {
@@ -21,8 +20,10 @@
     "@angular/platform-browser": "~7.2.0",
     "@angular/platform-browser-dynamic": "~7.2.0",
     "@angular/router": "~7.2.0",
+    "@ngrx/store": "^9.1.0",
     "@types/jquery": "^3.3.34",
     "core-js": "^2.5.4",
+    "jquery": "^3.4.1",
     "rxjs": "~6.3.3",
     "semantic-ui": "^2.4.2",
     "tslib": "^1.9.0",
