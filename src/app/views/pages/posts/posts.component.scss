@@ -1,0 +1,22 @@
+.ui.main.container {
+    height: auto;
+    margin-top: 10%;
+    margin-bottom: 10%;
+    min-height: 100%;
+}
+
+img {
+    display: block;
+    max-width:230px;
+    max-height:250px;
+    width: auto;
+    height: auto;
+}
+
+p {
+    justify-content: start;
+}
+
+.add.post.row {
+    margin-bottom:20px;
+}

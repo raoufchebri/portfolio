@@ -1,0 +1,13 @@
+  <div class="ui grid">
+    
+    <div *ngFor = "let x of [1,2,3,4]" class="four wide column">
+      <card></card>
+    </div>
+
+    <div *ngFor = "let x of [1,2,3,4]" class="sixteen wide column">
+      <card></card>
+    </div>
+    <div class="ui grid center aligned row">
+      <a [routerLink]="['/posts']" routerLinkActive="router-link-active"  class="ui large button">All Posts</a>
+    </div>
+  </div>

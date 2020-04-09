@@ -1,0 +1,13 @@
+<div class="ui main container">
+  <div class="add post row">
+    <a [routerLink]="['/create-post']" routerLinkActive="router-link-active"  class="ui blue button"><i class="add icon"></i>New Post</a>
+  </div>
+  <div id="top" class="ui grid">
+    <div *ngFor = "let x of [1,2,3,4, 5,6,7,8,9,10]" class="five wide column">
+      <card></card>
+    </div>
+    <div class="ui grid center aligned row">
+      <a href="/" class="ui large button">Load more</a>
+    </div>
+  </div>
+</div>

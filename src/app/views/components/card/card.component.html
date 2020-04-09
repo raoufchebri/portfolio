@@ -1,0 +1,15 @@
+<div class="ui card align center">
+  <a class="image" href="#">
+    <img src="../../../assets/images/image.png">
+  </a>
+  <div class="content">
+    <a class="header" href="#">{{ article.title }}</a>
+    <div class="meta">
+      <a>Posted on {{ article.date | date:'longDate' }}</a>
+    </div>
+    <div class="description">
+      {{ article.content }}
+      ...<a [routerLink]="['/post/'+article.id]" routerLinkActive="router-link-active">Read more</a>
+    </div>
+  </div>
+</div>

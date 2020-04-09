@@ -1,0 +1,30 @@
+<!-- Following Menu -->
+<div class="ui large top fixed menu">
+  <div class="ui container">
+    <a href="/home#home" class="item">Home</a>
+    <a href="/home#about" class="item">About</a>
+    <a href="/home#frameworks" class="item">Frameworks</a>
+    <a href="home#journey" class="item">Journey</a>
+    <a [routerLink]="['/posts']" routerLinkActive="router-link-active"  class="item">Blog</a>
+    <a href="home#contact" class="item" tabindex="0">Contact</a>
+    <div class="right menu">
+      <div *ngIf="!(isLoggedIn$ | async)" class="item">
+        <a [routerLink]="['/login']" class="ui button">Login</a>
+      </div>
+      <div class="item">
+        <span *ngIf="isLoggedIn$ | async">
+          Hi there!
+          <div class="ui inline dropdown">
+            <div class="text">
+              Raouf Chebri
+              <img class="ui avatar image" src="../../../../assets//images/hvaler.jpg">
+            </div>
+          </div>
+        </span>
+      </div>
+      <div *ngIf="isLoggedIn$ | async" class="item">
+        <button (click)="logout()" class="ui button">Logout</button>
+      </div>
+    </div>
+  </div>
+</div>
