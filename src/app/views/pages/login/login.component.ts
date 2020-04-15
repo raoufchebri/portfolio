@@ -4,7 +4,7 @@ import { Store } from '@ngrx/store';
 import { login } from 'src/app/core/auth/actions/auth.action';
 import { Observable } from 'rxjs';
 import { AppState } from 'src/app/app.reducers';
-import { selectIsLoggedInProperty, selectAuth } from 'src/app/core/auth/selectors/auth.selectors';
+import { selectToken, selectAuth } from 'src/app/core/auth/selectors/auth.selectors';
 import { map, tap } from 'rxjs/operators';
 import { Router } from '@angular/router';
 
@@ -33,6 +33,12 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
     this.error$ = this.store.select(selectAuth).pipe(map(state => state.error));
     this.loginForm = this.formBuilder.group(this.properties);
+    
+    this.store.select(selectToken).pipe(tap(token => {
+      if (token) {
+        this.router.navigateByUrl('/home');
+      }
+    })).subscribe();
   }
 
   login() {
@@ -42,13 +48,6 @@ export class LoginComponent implements OnInit {
     };
 
     this.store.dispatch(login({ credentials }));
-
-    this.store.select(selectIsLoggedInProperty).pipe(tap(isLoggedIn => {
-      if (isLoggedIn) {
-        this.router.navigateByUrl('/home');
-      }
-    })).subscribe();
-
   }
 
 }

@@ -1,0 +1,11 @@
+<div *ngIf="(posts$ | async) as posts" class="ui grid">
+  <div *ngFor="let post of posts" class="four wide column">
+    <app-card [id]="post?.id" [title]="post?.title" [body]="post?.body"></app-card>
+  </div>
+  <div *ngFor="let post of posts" class="sixteen wide column">
+    <app-card [id]="post?.id" [title]="post?.title" [body]="post?.body"></app-card>
+  </div>
+  <div class="ui grid center aligned row">
+    <a [routerLink]="['/posts']" routerLinkActive="router-link-active" class="ui large button">All Posts</a>
+  </div>
+</div>

@@ -1,20 +1,17 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
-  selector: 'card',
+  selector: 'app-card',
   templateUrl: './card.component.html',
   styleUrls: ['./card.component.scss']
 })
 export class CardComponent implements OnInit {
 
-  article = {
-    title: 'Article',
-    date: new Date(),
-    content: `Lorem ipsum dolor sit, amet consectetur adipisicing elit. Non molestias rem pariatur facere repudiandae
-    iste,
-    autem perspiciatis dolor beatae voluptatem?`,
-    id: '3d-printing'
-  }
+  @Input() id: number;
+  @Input() title: string;
+  @Input() body: string;
+  date = new Date();
+  imageUrl = '../../../assets/images/image.png';
 
   constructor() { }
 

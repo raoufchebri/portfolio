@@ -1,15 +1,35 @@
 <div class="ui card align center">
   <a class="image" href="#">
-    <img src="../../../assets/images/image.png">
+    <img *ngIf="title" [src]="imageUrl">
+    <div *ngIf="!title" class="ui placeholder">
+      <div class="square image"></div>
+    </div>
   </a>
   <div class="content">
-    <a class="header" href="#">{{ article.title }}</a>
-    <div class="meta">
-      <a>Posted on {{ article.date | date:'longDate' }}</a>
+    <div *ngIf="! title" class="ui placeholder">
+      <div class="header">
+        <div class="medium line"></div>
+      </div>
+      <div class="meta">
+        <div class="short line"></div>
+      </div>
     </div>
-    <div class="description">
-      {{ article.content }}
-      ...<a [routerLink]="['/post/'+article.id]" routerLinkActive="router-link-active">Read more</a>
+    <div *ngIf="title">
+      <div class="header">{{ title }}</div>
+      <div class="meta">
+        <a>Posted on {{ date | date:'longDate' }}</a>
+      </div>
     </div>
+    <div *ngIf="body" class="description">
+      {{ body }}
+    </div>
+    <div *ngIf="! body" class="ui placeholder">
+      <div class="description">
+      </div>
+    </div>
+  </div>
+  <div class="extra content">
+    <a class="ui primary button" [routerLink]="['/post/'+id]" routerLinkActive="router-link-active">Read more</a>
+    <div class="ui button">Edit</div>
   </div>
 </div>

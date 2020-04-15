@@ -2,12 +2,20 @@
   <div class="add post row">
     <a [routerLink]="['/create-post']" routerLinkActive="router-link-active"  class="ui blue button"><i class="add icon"></i>New Post</a>
   </div>
-  <div id="top" class="ui grid">
-    <div *ngFor = "let x of [1,2,3,4, 5,6,7,8,9,10]" class="five wide column">
-      <card></card>
+  <div *ngIf="(posts$ | async) as posts" id="top" class="ui grid">
+    <div *ngFor = "let post of posts.slice(0,MAX_POSTS)" class="five wide column">
+      <app-card [id]="post?.id" [title]="post?.title" [body] = "post?.body"></app-card>
     </div>
     <div class="ui grid center aligned row">
-      <a href="/" class="ui large button">Load more</a>
+      <button class="ui large button" (click)="loadPosts()">Load more</button>
+    </div>
+  </div>
+  <div *ngIf="!(posts$ | async)" id="top" class="ui grid">
+    <div *ngFor = "let post of dummyArray" class="five wide column">
+      <app-card></app-card>
+    </div>
+    <div class="ui grid center aligned row">
+      <button class="ui large loading button" (click)="loadPosts()">Load more</button>
     </div>
   </div>
 </div>

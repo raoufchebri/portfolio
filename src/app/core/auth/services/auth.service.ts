@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
-import { of, Observable, EMPTY, throwError } from 'rxjs';
+import { of, Observable, throwError, EMPTY } from 'rxjs';
 import { User } from '../models/user';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -16,10 +17,14 @@ export class AuthService {
         uid: '1',
         name: 'Admin',
         email,
-        authTokenKey: 'TOKEN_KEY'
+        authTokenKey: 'access-token-8f3ae836da744329a6f93bf20594b5cc'
       });
     } else {
       return throwError('Wrong email or password');
     }
+  }
+
+  logout() {
+    return of(localStorage.removeItem(environment.authTokenKey));
   }
 }

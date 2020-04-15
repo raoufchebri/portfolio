@@ -9,7 +9,7 @@ export const selectAuthTokenKey = createSelector(
     (state: AuthState) => state.authTokenKey
 );
 
-export const selectIsLoggedInProperty = createSelector(
+export const selectToken = createSelector(
   selectAuth,
-  (state: AuthState) => state.isLoggedIn
+  (state: AuthState) => state.authTokenKey
 );

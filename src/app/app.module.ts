@@ -7,13 +7,12 @@ import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { SkillComponent } from './views/components/skill/skill.component';
-import { ListComponent } from './views/components/list/list.component';
+import { SkillBarListComponent } from './views/components/skill-bar-list/skill-bar.component';
+import { HorizontalListComponent } from './views/components/horizontal-list/horizontal-list.component';
 import { MenuComponent } from './views/components/header/header.component';
 import { TimelineComponent } from './views/components/timeline/timeline.component';
-import { PostsComponent } from './views/components/posts/posts.component';
+import { PostsComponent } from './views/components/post-horizontal-list/post-horizontal-list.component';
 import { ContactComponent } from './views/components/contact/contact.component';
-import { AboutComponent } from './views/components/about/about.component';
 import { FooterComponent } from './views/components/footer/footer.component';
 import { CardComponent } from './views/components/card/card.component';
 import { LoginComponent } from './views/pages/login/login.component';
@@ -25,17 +24,20 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { reducers } from './app.reducers'
 import { AuthEffects } from './core/auth/effects/auth.effects';
 import { CreatePostComponent } from './views/pages/create-post/create-post.component';
+import { CommentComponent } from './views/components/comment/comment.component';
+import { HttpClientModule } from '@angular/common/http';
+import { PostService } from './core/services/post/post.service';
+import { PostEffects } from './core/effects/post.effects';
 
 @NgModule({
   declarations: [
     AppComponent,
-    SkillComponent,
-    ListComponent,
+    SkillBarListComponent,
+    HorizontalListComponent,
     MenuComponent,
     TimelineComponent,
     PostsComponent,
     ContactComponent,
-    AboutComponent,
     FooterComponent,
     CardComponent,
     LoginComponent,
@@ -43,7 +45,8 @@ import { CreatePostComponent } from './views/pages/create-post/create-post.compo
     PostComponent,
     HomeComponent,
     PageNotFoundComponent,
-    CreatePostComponent
+    CreatePostComponent,
+    CommentComponent
   ],
   imports: [
     BrowserModule,
@@ -58,10 +61,13 @@ import { CreatePostComponent } from './views/pages/create-post/create-post.compo
       // logOnly: environment.production, // Restrict extension to log-only mode
     }),
     EffectsModule.forRoot([
-      AuthEffects
-    ])
+      AuthEffects,
+      PostEffects
+    ]),
+    HttpClientModule
   ],
-  providers: [],
+  providers: [
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

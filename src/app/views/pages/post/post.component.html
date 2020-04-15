@@ -1,11 +1,25 @@
-<div class="ui main text container">
+<div *ngIf="(post$ | async) as post" class="ui main text container">
   <a [routerLink]="['/posts']" class="ui button"><i class="angle left icon"></i>Back</a>
   <a [routerLink]="['/create-post/1']" class="ui blue button"><i class="edit icon"></i>Edit</a>
-  <h1 class="ui header">{{ title }}</h1>
-  <div [innerHTML]="content"></div>
-  <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quas nesciunt incidunt nobis voluptas cum voluptates
-    ipsam, sint explicabo praesentium qui magnam molestias eum, cupiditate fuga non ex ipsa minus autem, expedita
-    tempore debitis omnis ad rerum corrupti. Omnis culpa praesentium eaque. Necessitatibus dolor ratione, iusto impedit
-    eveniet quisquam earum sapiente.</p>
-    <a [routerLink]="['/posts']" class="ui button"><i class="angle left icon"></i>Back</a>
+  <div class="ui main text container">
+    <h1 class="ui header">{{ post.title }}</h1>
+    <img src="../../../../assets/images/image.png" alt="">
+    <div [innerHTML]="post.body"></div>
+  </div>
+  <a [routerLink]="['/posts']" class="ui button"><i class="angle left icon"></i>Back</a>
+  <app-comment></app-comment>
+</div>
+<div *ngIf="!(post$ | async)" class="ui main text container placeholder">
+  <div class="header">
+    <div class="medium line"></div>
+    <div class="medium line"></div>
+    <div class="medium line"></div>
+    <div class="square image"></div>
+    <div>
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+    </div>
+  </div>
 </div>

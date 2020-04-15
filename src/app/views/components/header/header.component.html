@@ -8,21 +8,21 @@
     <a [routerLink]="['/posts']" routerLinkActive="router-link-active"  class="item">Blog</a>
     <a href="home#contact" class="item" tabindex="0">Contact</a>
     <div class="right menu">
-      <div *ngIf="!(isLoggedIn$ | async)" class="item">
+      <div *ngIf="!(token$ | async)" class="item">
         <a [routerLink]="['/login']" class="ui button">Login</a>
       </div>
       <div class="item">
-        <span *ngIf="isLoggedIn$ | async">
+        <span *ngIf="token$ | async">
           Hi there!
           <div class="ui inline dropdown">
             <div class="text">
-              Raouf Chebri
-              <img class="ui avatar image" src="../../../../assets//images/hvaler.jpg">
+              John Doe
+              <img class="ui avatar image" src="../../../../assets/avatar/joe.jpg">
             </div>
           </div>
         </span>
       </div>
-      <div *ngIf="isLoggedIn$ | async" class="item">
+      <div *ngIf="token$ | async" class="item">
         <button (click)="logout()" class="ui button">Logout</button>
       </div>
     </div>

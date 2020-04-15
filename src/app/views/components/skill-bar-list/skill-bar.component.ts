@@ -1,11 +1,11 @@
 import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
-  selector: 'app-skill',
-  templateUrl: './skill.component.html',
-  styleUrls: ['./skill.component.scss']
+  selector: 'app-skill-bar',
+  templateUrl: './skill-bar.component.html',
+  styleUrls: ['./skill-bar.component.scss']
 })
-export class SkillComponent implements OnInit {
+export class SkillBarListComponent implements OnInit {
 
   @Input() title: string;
   @Input() url: string;

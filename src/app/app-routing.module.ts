@@ -17,11 +17,15 @@ const routes: Routes = [
     component: LoginComponent,
   },
   {
-    path: 'create-post/:id',
+    path: 'create-post',
     component: CreatePostComponent,
   },
   {
-    path: 'post/:id',
+    path: 'create-post/:postId',
+    component: CreatePostComponent,
+  },
+  {
+    path: 'post/:postId',
     component: PostComponent,
   },
   {

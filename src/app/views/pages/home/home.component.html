@@ -1,37 +1,56 @@
 <!-- Page Contents -->
 <div id="home" class="pusher">
   <div class="ui inverted vertical masthead center aligned segment">
-      <div class="ui text container">
-        <h1 class="ui inverted header">
-          Raouf Chebri
-        </h1>
-        <h2>Software Developer Engineer | MBA.</h2>
-        <!-- <a href = "#about" class="ui huge primary button">Scroll Down <i class="down arrow icon"></i></a> -->
+    <div class="ui text container">
+      <h1 class="ui inverted header">
+        Raouf Chebri
+      </h1>
+      <h2>Software Developer Engineer | MBA.</h2>
+      <!-- <a href = "#about" class="ui huge primary button">Scroll Down <i class="down arrow icon"></i></a> -->
     </div>
   </div>
-  
+
   <!-- BEGIN ::  ABOUT -->
   <div id="about" class="ui vertical stripe segment">
     <div class="ui header middle center aligned row">
       <h3 class="ui header">About</h3>
     </div>
-    <about></about>
+    <div class="ui middle aligned stackable grid container">
+      <div class="center aligned row">
+        <div class="six wide column">
+          <img src="../assets/images/hvaler.jpg" class="ui large bordered rounded image">
+          <h3 class="ui header">Who's this guy?</h3>
+          <p>Raouf Chebri is a Software Developer Engineer and an MBA with experience in backend and frontend
+            development and a growing interest
+            for Machine Learning, Deep Learning and Computer Vision.</p>
+        </div>
+        <div class="eight wide right floated column">
+          <div class="five wide column" *ngFor="let s of skillSet">
+            <app-skill-bar [title]="s.title" [color]="s.color" [value]="s.value" [url]="s.url"></app-skill-bar>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="center aligned column">
+        </div>
+      </div>
+    </div>
   </div>
   <!-- END :: ABOUT -->
   <!-- BEGIN :: TECHNICAL SUMMARY -->
-  
+
   <div id="frameworks" class="ui vertical stripe segment">
     <div class="ui header middle center aligned row">
       <h3 class="ui header">Frameworks</h3>
     </div>
-    <list [elements] = "frameworks"></list>
+    <app-horizontal-list [elements]="frameworks"></app-horizontal-list>
   </div>
 
   <div class="ui vertical stripe segment">
     <div class="ui header middle center aligned row">
       <h3 class="ui header">Code Base & Cloud Services</h3>
     </div>
-    <list [elements] = "cloud"></list>
+    <app-horizontal-list [elements]="cloud"></app-horizontal-list>
   </div>
 
   <!-- END :: TECHNICAL SUMMARY -->
@@ -41,7 +60,7 @@
     <div class="ui header middle center aligned row">
       <h3 class="ui header">Journey</h3>
     </div>
-      <timeline></timeline>
+    <app-timeline></app-timeline>
   </div>
   <!-- END :: EXPERIENCE -->
 
@@ -50,7 +69,7 @@
     <div class="ui header middle center aligned row">
       <h3 class="ui header">Blog</h3>
     </div>
-      <posts></posts>
+    <app-post-horizontal-list></app-post-horizontal-list>
   </div>
   <!-- END :: BLOG -->
 
@@ -59,7 +78,7 @@
     <div class="ui header middle center aligned row">
       <h3 class="ui header">Education & Certifications</h3>
     </div>
-    <list [elements] = "education"></list>
+    <app-horizontal-list [elements]="education"></app-horizontal-list>
   </div>
   <!-- END :: EDUCATION -->
 
@@ -68,7 +87,7 @@
     <div class="ui header middle center aligned row">
       <h3 class="ui header">Interests</h3>
     </div>
-    <list [elements] = "interests"></list>
+    <app-horizontal-list [elements]="interests"></app-horizontal-list>
   </div>
   <!-- END :: INTERESTS -->
 
@@ -77,6 +96,6 @@
     <div class="ui header middle center aligned row">
       <h3 class="ui header">Contact</h3>
     </div>
-    <contact></contact>
+    <app-contact></app-contact>
   </div>
   <!-- END :: CONTACT -->

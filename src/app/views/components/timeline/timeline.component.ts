@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { element } from '@angular/core/src/render3';
 
 @Component({
-  selector: 'timeline',
+  selector: 'app-timeline',
   templateUrl: './timeline.component.html',
   styleUrls: ['./timeline.component.scss']
 })
